@@ -2,9 +2,8 @@ const { default: mongoose } = require("mongoose");
 
 
 const schema = new mongoose.Schema({
-    user: { type: mongoose.SchemaTypes.ObjectId, ref: "User", required: true },
-    first_name: { type: String, required: true },
-    last_name: { type: String, required: true },
+    user: { type: mongoose.SchemaTypes.ObjectId, ref: "User", required: false, set: v => v === '' ? null : v },
+    full_name: { type: String, required: true },
     date_of_birth: { type: Date, required: true },
     address: String,
     phone: String,

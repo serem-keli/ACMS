@@ -3,7 +3,9 @@
 * {
     font-family: 'Inter', sans-serif;
 }
-
+.small{
+    font-size: small !important;
+}
 a {
     text-decoration: none;
     color: inherit;

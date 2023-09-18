@@ -55,7 +55,7 @@ require('./passport')(passport);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/auth", authRouter)
-app.use("/residents", residentsRouter)
+app.use("/resident", residentsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
