@@ -2,6 +2,7 @@ var express = require('express');
 const passport = require('passport');
 var router = express.Router();
 const User = require('../models/user');
+const { default: mongoose } = require('mongoose');
 
 router.get('/signup', function (req, res) {
     res.render('signup.njk', { title: "ACMS | SignUp", messages: req.flash() });
@@ -11,7 +12,8 @@ router.get('/signup', function (req, res) {
 router.post('/signup', async function (req, res, next) {
     try {
         const { email, password, role } = req.body;
-
+     
+    
         // Check if the email already exists in the database
         const existingUser = await User.findOne({ email: email });
         if (existingUser) {
