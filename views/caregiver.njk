@@ -36,7 +36,7 @@
         <tbody>
           {% for resident in residents %}
           <tr>
-            <th scope="row">{{resident._id}}</th>
+            <th scope="row">{{loop.index}}</th>
             <td>{{resident.full_name}}</td>
             <td>{{resident.admission_date}}</td>
             <td>{{resident.gender}}</td>
@@ -65,7 +65,7 @@
         <tbody>
           {% for resident in residents %}
           <tr>
-            <th scope="row">{{resident._id}}</th>
+            <th scope="row">{{loop.index}}</th>
             <td>{{resident.full_name}}</td>
             <td>{{resident.admission_date}}</td>
             <td>{{resident.gender}}</td>
