@@ -45,6 +45,18 @@ router.get('/signout', function (req, res, next) {
     });
 });
 
+router.post("/password_change",async function (req,res,next){
+    try {
+        const instance = await User.findOne({_id:req.user._id})
+        instance.password = req.body.password;
+        await instance.save()
+        return res.redirect("/profile")
+    } catch (error) {
+        console.log("Errror: ",error);
+        return res.redirect("/profile")
+    }
+});
+
 
 
 

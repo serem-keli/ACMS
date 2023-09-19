@@ -3,7 +3,7 @@ const { default: mongoose } = require("mongoose");
 const carePlanSchema = new mongoose.Schema({
     // Resident for whom the care plan is created (reference to the Resident model)
     resident: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.SchemaTypes.ObjectId,
         ref: 'Resident',
         required: true,
     },
