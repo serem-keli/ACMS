@@ -17,7 +17,6 @@ schema.pre('save', function (next) {
 
         bcrypt.hash(user.password, salt, (err, hash) => {
             if (err) return next(err);
-
             user.password = hash;
             next();
         });
@@ -25,7 +24,5 @@ schema.pre('save', function (next) {
 });
 
 const User = mongoose.model('User', schema);
-
-
 
 module.exports = User;
